@@ -47,14 +47,15 @@ Explore our [Documentation](docs/README.md) for in-depth information on setup, u
 
 ## :earth_africa: External Resources
 
-- [OECD Guidelines on Hiring](https://www.oecd.org/hiring-guidelines)
-- [ETS Recruitment Best Practices](https://www.ets.org/recruitment-best-practices)
-- [Wiley HR Insights](https://www.wiley.com/hr-insights)
+- [OECD Home | South Africa](https://www.oecd.org/southafrica/)
+- [ETS Recruitment Best Practices](https://www.ets.org/gre.html)
+- [Wiley HR Insights](https://www.wiley.com/en-gb/business/research/corporate-solutions/solutions/human-resources)
 
-![Future Growth](https://your-image-link-here.com)
+![64484745-0-DSCF0243](https://github.com/skunkworksza/Talent-Pool-Database/assets/126121348/691c7fed-53b8-4e4a-80e8-8f66c0c0e950)
 
-## :email: Contact Us
+## :email:**[Konnekt!](mailto:hr@skunkworks.africa)**
 
-Have questions or suggestions? Feel free to reach out to us at [team@email.com](mailto:team@email.com).
+
+Have questions or suggestions? Feel free to reach out to us at **[Konnekt](mailto:konnect@skunkworks.africa)**
 
 Let's shape the future of talent acquisition together! :rocket:

@@ -1,0 +1,67 @@
+name: CI and Deployment
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint code
+        run: npm run lint
+
+      - name: Run tests
+        run: npm test
+
+      - name: Audit dependencies
+        run: npm audit
+
+      - name: Update dependencies
+        run: |
+          npx npm-check-updates -u
+          npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Validate files
+        run: |
+          if [ ! -f "styles.css" ]; then
+            echo "Error: styles.css is missing."
+            exit 1
+          fi
+          duplicates=$(find . -type f -exec basename {} \; | sort | uniq -d)
+          if [ -n "$duplicates" ]; then
+            echo "Error: Duplicate files found: $duplicates"
+            exit 1
+          fi
+
+      - name: Deploy to Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: npx netlify-cli deploy --prod
+
+      - name: Post-deployment checks
+        run: |
+          curl -s https://your-deployed-site.com | grep "Expected content"
+          if [ $? -ne 0 ]; then
+            echo "Error: Deployed site does not contain expected content."
+            exit 1
+          fi
